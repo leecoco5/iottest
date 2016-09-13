@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="code">
+<typeAlias alias="vo" type="com.code.vo.codeVO"/>
+
+
+
+<select id ="viewData1" resultClass = "vo" parameterClass="int">
+select * from product where productNum=#num#
+</select>
+<select id ="viewData2" resultClass = "vo" parameterClass="int">
+select * from product1 where productNum=#num#
+</select>
+
+<insert id="insertdata" parameterClass="vo">
+insert into product1 values(#productnum#,#producttype#,#productname#,
+ #price#,#color#,#photo#,#count#,#comments# )
+</insert>
+</sqlMap>
